@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+   <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
+  <title>Angle Movement AFrame with Look At</title>
+
+  <script src="./script.js"></script>
+</head>
+<body >
+  <a-scene cursor="rayOrigin:mouse" vr-mode-ui="enabled: false">
+    <a-assets>
+      <!-- https://sketchfab.com/3d-models/zapdos-galarian-589a2cefe1e442228f62292b8cb18772 -->
+      <a-asset-item id="zapdos_galarian" src="./zapdos_galarian.glb"></a-asset-item>
+    </a-assets>
+    <a-entity id="camera" camera wasd-controls look-controls position="0 1 4" rotation="30 0 0" ></a-entity>
+    <a-entity
+      gltf-model="#zapdos_galarian" animation-mixer="clip: zapdos_idle" scale="0.3 0.3 0.3" follow position="-1 0 -3"></a-entity>
+    <a-entity cursor-listener environment="preset: forest; shadow: true; ground: flat">
+    </a-entity>
+
+  </a-scene>
+</body>
+</html>
+
+<!-- none, default, contact, egypt, checkerboard, forest, goaland, yavapai, goldmine, threetowers, poison, arches, tron, japan, dream, volcano, starry, osiris, moon -->
